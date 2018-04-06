@@ -80,11 +80,11 @@ load_cuda="module load dev/cuda/7.0.28"
 # can also be set in options via -D
 juiceDir="/opt/juicer"
 # default queue, can also be set in options via -q
-queue="short"
+queue="gpuqueue"
 # default queue time, can also be set in options via -Q
 queue_time="12:00"
 # default long queue, can also be set in options via -l
-long_queue="long"
+long_queue="gpuqueue"
 # default long queue time, can also be set in options via -L
 long_queue_time="168:00"
 # size to split fastqs. adjust to match your needs. 4000000=1M reads per split
@@ -468,9 +468,9 @@ CNTLIG
 	# align read1 fastq
 	if [ -n "$shortread" ] || [ "$shortreadend" -eq 1 ]
 	then
-	    alloc_mem=16000
+	    alloc_mem=16
 	else
-	    alloc_mem=12000
+	    alloc_mem=12
 	fi	
 
 	## LSF users change queue below to $queue
@@ -511,9 +511,9 @@ ALGNR1
 	# align read2 fastq
 	if [ -n "$shortread" ] || [ "$shortreadend" -eq 2 ]
 	then
-	    alloc_mem=16000
+	    alloc_mem=16
 	else
-	    alloc_mem=12000
+	    alloc_mem=12
 	fi	
         
         ## LSF users change queue below to $queue	
